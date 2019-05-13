@@ -5,15 +5,15 @@ int main()
 	try
 	{
 		operationFactory myOperFactory;
-		calculateOperation* oper = myOperFactory.createOperation("-");
+		calculateOperation* oper = myOperFactory.createOperation("/");
 		oper->aSetNumA(1);
-		oper->aSetNumB(2);
+		oper->aSetNumB(0);
 		double calResult = oper->aGetCalResult();
 		std::cout << "calResult = "<< calResult << std::endl;
 		delete oper;
 	}
 	catch(std::string exceptionStr)
 	{
-		std::cout << "The code throw a exception :"<< exceptionStr << std::endl;
+		std::cout << "The code throw a exception : "<< exceptionStr << std::endl;
 	}
 }

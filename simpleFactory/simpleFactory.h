@@ -22,7 +22,7 @@ public:
 	double aGetNumA();
 	double aGetNumB();
 
-	virtual double aGetCalResult()=0;
+	virtual double aGetCalResult() = 0;
 };
 
 class operationAdd : public calculateOperation
@@ -54,7 +54,9 @@ class operationFactory
 public:
 	calculateOperation* createOperation(std::string operate)
 	{
-		std::map<std::string,int> operToIndex = 
+		std::string exceptionStr("The operation is not exist!");
+
+		std::map<std::string, int> operToIndex = 
 		{
 			{"+", 0},
 			{"-", 1},
@@ -72,7 +74,7 @@ public:
 			case 3:
 				return new operationDiv();
 			default:
-				throw "The operation is not exist!";
+				throw exceptionStr;
 				break;
 		}
 	}

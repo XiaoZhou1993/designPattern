@@ -14,7 +14,7 @@ calculateOperation::calculateOperation(double tempNumA, double tempNumB)
 
 calculateOperation::~calculateOperation()
 {
-	std::cout << "enter the destructor!" << std::endl;
+	std::cout << "Enter the destructor of calculateOperation!" << std::endl;
 }
 
 void calculateOperation::aSetNumA(double tempNumA)
@@ -66,8 +66,10 @@ double operationDiv::aGetCalResult()
 	double tempNumA = calculateOperation::aGetNumA();
 	double tempNumB = calculateOperation::aGetNumB();
 
+	std::string exceptionStr("The operNumberB is zero!");
+
 	if(0 == tempNumB)
-		throw "The operNumberB is zero!";
+		throw exceptionStr;
 
 	return tempNumA / tempNumB;
 }
